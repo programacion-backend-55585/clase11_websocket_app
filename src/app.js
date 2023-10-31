@@ -17,7 +17,8 @@ app.set('view engine', 'handlebars')
 
 app.use('/', routerViews)
 
-const httpServer = app.listen(8080, () => console.log(`Running 🏃...`))
+const PORT = process.env.PORT || 8080
+const httpServer = app.listen(PORT, () => console.log(`Running 🏃...`))
 const io = new Server(httpServer)
 
 const messages = []
